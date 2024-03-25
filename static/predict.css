@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+
+    background-image: url("images/samuel-scalzo-xyuYk9oLA8I-unsplash.jpg");
+
+
+     background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    color: #c3b8b8;
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background:none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    width: 48%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #c3b8b8;
+}
+
+input[type="number"],
+input[type="submit"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+p{
+    text-align: center;
+    color: white;
+}
