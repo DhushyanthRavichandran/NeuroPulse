@@ -5,11 +5,14 @@ import pandas as pd
 import os
 
 
+model_path = os.path.join(os.path.dirname(__file__), 'RFmodel.pkl')
+model = pickle.load(open(model_path, 'rb'))
+
 template_dir = os.path.abspath('templates')
 app = Flask(__name__, template_folder=template_dir, static_folder='static')
 
 
-model = pickle.load(open('D:\ML projects\Stroke-prediction\Stroke-prediction\RFmodel.pkl', 'rb'))
+# model = pickle.load(open('D:\ML projects\Stroke-prediction\Stroke-prediction\RFmodel.pkl', 'rb'))
 
 gender_map = {'Male': 0, 'Female': 1, 'Other': 2}
 hypertension_map = {'No': 0, 'Yes': 1}
@@ -109,5 +112,5 @@ def predict():
    
     return render_template('predict.html', predicted_text=predicted_text)
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
