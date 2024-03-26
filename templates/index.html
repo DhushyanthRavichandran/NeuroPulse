@@ -30,26 +30,19 @@
     </nav>
     
     <div class="header">
-      <!-- <img class="header-img" src="D:\ML projects\Stroke-prediction\Stroke-prediction\images\unique-black-kitchen-island-and-bar-combination.jpg" /> -->
       <img class="header-img" src="{{ url_for('static', filename='images/unique-black-kitchen-island-and-bar-combination.jpg') }}" />
-      
-
-     <form action="" method="">
-      <button formaction="/predict">
-        predict&nbsp;  <i class="fas fa-arrow-right"></i>
-      </button>
-    </form>
-    </form>
-
-      <h3>NeuroPulse: AI Pulse for Stroke Prevention, Safeguarding Brain Health for healthier tommorow</h3>
-    </div>
+      <div class="content-container">
+          <h3>NeuroPulse: AI Pulse for Stroke Prevention, Safeguarding Brain Health for healthier tomorrow</h3>
+          <form action="" method="">
+              <button formaction="/predict">
+                  predict&nbsp;  <i class="fas fa-arrow-right"></i>
+              </button>
+          </form>
+      </div>
+  </div>
 
     <div class="option">
-<!--       
-      <input type="button" name="predict" value="Predict" formaction="predict.css"/>
-      <input type="button" name="causes of stroke" value="Causes of Stroke" />
-      <input type="button" name="prevention" value="Prevention" />
-      <input type="button" name="stay informed" value="Stay Informed" /> -->
+
      <form  action="" method="POST">
       <button formaction="/predict">predict</button>
       <button formaction="">causes of stroke</button>
@@ -67,27 +60,18 @@
           <h4>Incidence and mortality</h4>
         </div>
         <div class="container-section">
-          <!-- <img
-            class="container-img"
-            src="D:\ML projects\Stroke-prediction\Stroke-prediction\images\106244260.webp"
-          /> -->
+         
           <img class="container-img" src="{{ url_for('static', filename='images/106244260.webp') }}" />
 
           <h4>Second most cause of death</h4>
         </div>
         <div class="container-section">
-          <!-- <img
-            class="container-img"
-            src="D:\ML projects\Stroke-prediction\Stroke-prediction\images\sdoh_shutterstock_473742535_cropped.jpg"
-          /> -->
+          
           <img class="container-img" src="{{ url_for('static', filename='images/sdoh_shutterstock_473742535_cropped.jpg') }}" />
           <h4>Risk factor</h4>
         </div>
         <div class="container-section">
-          <!-- <img
-            class="container-img"
-            src="D:\ML projects\Stroke-prediction\Stroke-prediction\images\ftcms_df434072-2dd0-11e4-8346-00144feabdc0.avif"
-           /> -->
+          
            <img class="container-img" src="{{ url_for('static', filename='images/ftcms_df434072-2dd0-11e4-8346-00144feabdc0.avif') }}" />
 
           <h4>poverty and stroke</h4>
@@ -100,37 +84,25 @@
       
         <div class="container-pop">
             <div class="container-section">
-              <!-- <img
-                class="container-img"
-                src="D:\ML projects\Stroke-prediction\Stroke-prediction\images\ABC_StrokeAwareness.jpg"
-              /> -->
+              
               <img class="container-img" src="{{ url_for('static', filename='images/ABC_StrokeAwareness.jpg') }}" />
 
               <h4>Stroke awareness month</h4>
             </div>
             <div class="container-section">
-              <!-- <img
-                class="container-img"
-                src="D:\ML projects\Stroke-prediction\Stroke-prediction\images\STROKE.jpg"
-              /> -->
+
               <img class="container-img" src="{{ url_for('static', filename='images/STROKE.jpg') }}" />
 
               <h4>what causes a stroke</h4>
             </div>
             <div class="container-section">
-              <!-- <img
-                class="container-img"
-                src="D:\ML projects\Stroke-prediction\Stroke-prediction\images\SignsofStroke_May2018-845x321.png"
-              /> -->
+
               <img class="container-img" src="{{ url_for('static', filename='images/SignsofStroke_May2018-845x321.png') }}" />
 
               <h4>Take care of your body</h4>
             </div>
             <div class="container-section">
-              <!-- <img
-                class="container-img"
-                src="D:\ML projects\Stroke-prediction\Stroke-prediction\images\cpp-stroke-awareness-month-FAST-1.webp"
-               /> -->
+
                <img class="container-img" src="{{ url_for('static', filename='images/cpp-stroke-awareness-month-FAST-1.webp') }}" />
 
               <h4>signs of stroke</h4>
@@ -150,10 +122,7 @@
             <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
         </div>
     </footer>
-
-
-
-      </div>
+     </div>
     </div>
   </body>
 </html>
