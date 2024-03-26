@@ -4,9 +4,13 @@ import numpy as np
 import pandas as pd
 import os
 
+model_path = os.path.abspath('D:/ML projects/Stroke-prediction/Stroke-prediction/RFmodel.pkl')
+with open(model_path, 'rb') as model_file:
+    model = pickle.load(model_file)
 
-model_path = os.path.join(os.path.dirname(__file__), 'RFmodel.pkl')
-model = pickle.load(open(model_path, 'rb'))
+
+# model_path = os.path.join(os.path.dirname(__file__), 'RFmodel.pkl')
+# model = pickle.load(open(model_path, 'rb'))
 
 template_dir = os.path.abspath('templates')
 app = Flask(__name__, template_folder=template_dir, static_folder='static')
@@ -112,5 +116,5 @@ def predict():
    
     return render_template('predict.html', predicted_text=predicted_text)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
