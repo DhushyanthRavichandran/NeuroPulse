@@ -8,7 +8,6 @@ model_path = os.path.abspath('D:/ML projects/Stroke-prediction/Stroke-prediction
 with open(model_path, 'rb') as model_file:
     model = pickle.load(model_file)
 
-
 # model_path = os.path.join(os.path.dirname(__file__), 'RFmodel.pkl')
 # model = pickle.load(open(model_path, 'rb'))
 
