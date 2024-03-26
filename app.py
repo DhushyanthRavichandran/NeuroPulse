@@ -3,10 +3,19 @@ from flask import Flask, request, jsonify, url_for, render_template
 import numpy as np
 import pandas as pd
 import os
+from sklearn.externals import joblib
 
+# Get the current directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
-model_path = os.path.join(os.path.dirname(__file__), 'RFmodel.pkl')
-model = pickle.load(open(model_path, 'rb'))
+# Construct the model path
+model_path = os.path.join(current_dir, 'RFmodel.pkl')
+
+# Load the model
+with open(model_path, 'rb') as model_file:
+    model = joblib.load(model_file)
+# model_path = os.path.join(os.path.dirname(__file__), 'RFmodel.pkl')
+# model = pickle.load(open(model_path, 'rb'))
 
 # model_path = os.path.join(os.path.dirname(__file__), 'RFmodel.pkl')
 # model = pickle.load(open(model_path, 'rb'))
