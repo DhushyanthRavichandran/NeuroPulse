@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, url_for, render_template
 import numpy as np
 import pandas as pd
 import os
-from sklearn.externals import joblib
+import joblib
 
 # Get the current directory
 current_dir = os.path.dirname(os.path.abspath(__file__))
