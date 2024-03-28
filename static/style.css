@@ -6,7 +6,6 @@
 body {
     font-family: "Poppins", sans-serif;
     background-color:black;
-    height: 200vh;
     color: white;
 }
 
@@ -54,7 +53,9 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
 }
-
+.container-section{
+    padding-bottom: 20px;
+}
 .content-container h3 {
     word-wrap: break-word;
     font-size: 2rem;
@@ -75,11 +76,14 @@ body {
 
 .option {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 20px;
-    flex-wrap: wrap;
     height: fit-content;
     color: white;
+}
+
+.option form {
+    display: inline-block;
 }
 
 .option button {
@@ -92,8 +96,8 @@ body {
     margin: 10px;
     font-size: medium;
     color: white;
+    align-items: center;
 }
-
 .container {
     margin: 10px;
     color:white;
@@ -126,13 +130,52 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.footer-content {
-    background-color:  rgb(49, 49, 48)  ;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: fit-content
+
+@media screen and (max-width:800px) {
+    .header-img{
+        display: none;
+    }
+    .header{
+        background-color: rgb(230, 230, 60);
+    }
+    
+    .option {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .option button {
+        margin: 10px 5px; 
+    }
+}
+
+
+
+footer{
+    background-color: rgb(55, 55, 55);
+}
+.footer-container{
+   
+    display: flex;
+    padding: 30px;
+    justify-content: space-around;
+}
+.col-1,.col-3,.col-4{
+    width: 20%;
+    padding: 10px;
+}
+.footer-container h4{
+    padding: 10px;
+}
+.footer-container ol {
+    list-style-type: none; 
+}
+.footer-container li{
+    padding: 5px;
+    text-decoration: none;
+}
+.copy{
+    display: flex;
+    justify-content: center;
+    
 }

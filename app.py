@@ -5,26 +5,16 @@ import pandas as pd
 import os
 import joblib
 
-# Get the current directory
 current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Construct the model path
 model_path = os.path.join(current_dir, 'RFmodel.pkl')
 
-# Load the model
+
 with open(model_path, 'rb') as model_file:
     model = joblib.load(model_file)
-# model_path = os.path.join(os.path.dirname(__file__), 'RFmodel.pkl')
-# model = pickle.load(open(model_path, 'rb'))
-
-# model_path = os.path.join(os.path.dirname(__file__), 'RFmodel.pkl')
-# model = pickle.load(open(model_path, 'rb'))
 
 template_dir = os.path.abspath('templates')
 app = Flask(__name__, template_folder=template_dir, static_folder='static')
 
-
-# model = pickle.load(open('D:\ML projects\Stroke-prediction\Stroke-prediction\RFmodel.pkl', 'rb'))
 
 gender_map = {'Male': 0, 'Female': 1, 'Other': 2}
 hypertension_map = {'No': 0, 'Yes': 1}
@@ -64,10 +54,6 @@ def predict_api():
             elif key == 'smoking_status':
                 input_data.append(smoking_status_map.get(value, 0))
     
-    
-    
-
-    
     input_data = np.array(input_data).reshape(1, -1)
 
     print(input_data)
@@ -81,6 +67,21 @@ def predict_api():
     result = int(output[0])
 
     return jsonify({'result': result})
+
+@app.route('/causes')
+def causes():
+    if request.method == 'GET':
+        return render_template('causes.html')
+
+@app.route('/prevention')
+def prevention():
+    if request.method == 'GET':
+     return render_template('prevention.html')
+
+@app.route('/stayInformed')
+def stay_informed():
+    if request.method == 'GET':
+     return render_template('stayInformed.html')
 
 
 @app.route('/predict', methods=['GET', 'POST'])
@@ -118,10 +119,10 @@ def predict():
         print('Prediction:', prediction)
 
         if( prediction == 0):
-            predicted_text = 'The prediction indicates that you are not likely to have a stroke. It is still important to follow a healthy lifestyle to reduce any potential risks'
+            predicted_text = 'The prediction indicates a low risk of stroke. To maintain this, focus on a balanced diet rich in fruits, vegetables, and whole grains. Regular physical activity and avoiding smoking can also significantly reduce the risk. Monitoring blood pressure and cholesterol levels is essential, along with managing stress effectively. Regular check-ups with healthcare providers can help ensure early detection and prevention.'
         else:
-            predicted_text = 'Our prediction suggests that there is a possibility of a stroke. Please seek medical advice promptly for a thorough assessment.'
-   
+            predicted_text = 'Our prediction indicates a potential risk of stroke. Its imperative to promptly seek medical advice for a comprehensive assessment and appropriate management. To reduce this risk, prioritize a healthy lifestyle with a balanced diet, regular physical activity, and avoiding smoking. Managing underlying conditions like hypertension and diabetes is also crucial. Consistent monitoring and adherence to medical guidance can significantly mitigate the risk of stroke and promote overall health.'
+
     return render_template('predict.html', predicted_text=predicted_text)
 
 if __name__ == '__main__':
