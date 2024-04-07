@@ -18,4 +18,4 @@ NeuroPulse is a website that predicts strokes using a machine learning Random Fo
 4. Open `http://localhost:5000` in your web browser
 
 ## Deployment
-The website is deployed using render  click this 👉  neuropulse.onrender.com/
+The website is deployed using render  click this 👉  [neuropulse.onrender.com/](https://neuropulse.onrender.com/)
